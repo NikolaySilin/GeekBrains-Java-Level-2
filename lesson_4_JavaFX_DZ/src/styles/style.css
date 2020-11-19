@@ -1,0 +1,12 @@
+.send-button {
+    -fx-background-color: #1455D9;
+}
+
+.menu-bar {
+    -fx-text-fill: #1455D9;
+}
+
+#inputField {
+    -fx-background-color: #545454;
+    -fx-text-fill: #fff;
+}
