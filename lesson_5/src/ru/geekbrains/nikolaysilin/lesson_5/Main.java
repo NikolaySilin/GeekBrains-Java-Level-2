@@ -18,9 +18,11 @@ public class Main {
 
         long a = System.currentTimeMillis();
         float[] arr = new float[size];
-        for(int i = 0; i < size; i++)
-            arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
-        System.out.println("Время выполнения программы без многопоточности: " + (System.currentTimeMillis() - a));
+        for(int i = 0; i < size; i++) {
+            arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+        }
+
+            System.out.println("Время выполнения программы без многопоточности: " + (System.currentTimeMillis() - a));
 
     }
 
@@ -40,15 +42,17 @@ public class Main {
 
         Thread t_1 = new Thread(() -> {
 
-            for(int i = 0; i < half_size; i++)
-            a1[i] = (float)(a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            for(int i = 0; i < half_size; i++) {
+                a1[i] = (float) (a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            }
 
         });
 
         Thread t_2 = new Thread(() -> {
 
-            for(int i = 0; i < half_size; i++)
-            a2[i] = (float)(a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            for(int i = 0; i < half_size; i++) {
+                a2[i] = (float) (a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            }
 
         });
 
